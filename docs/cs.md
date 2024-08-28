@@ -16,6 +16,7 @@ class Hello {
   {
     // 输出: Hello, world!
     Console.WriteLine("Hello, world!");
+    Console.ReadKey();
   }
 }
 ```
@@ -114,6 +115,7 @@ if (j == 10) {
 int intNum = 9;
 long longNum = 9999999;
 float floatNum = 9.99F;
+float floatNum = 9.99f;
 double doubleNum = 99.999;
 decimal decimalNum = 99.9999M;
 char letter = 'D';
@@ -214,6 +216,7 @@ string first = "John";
 string last = "Doe";
 string name = first + " " + last;
 Console.WriteLine(name); // => John Doe
+Console.ReadKey();
 ```
 
 ### 字符串插值
@@ -223,6 +226,27 @@ string first = "John";
 string last = "Doe";
 string name = $"{first} {last}";
 Console.WriteLine(name); // => John Doe
+Console.ReadKey();
+```
+
+### 占位符简介
+
+当WriteLine（）函数有多个参数时，输出第一个参数（双引号内的）中的内容，而第二个及后面的参数中的内容替换掉第一个参数中对应位置的占位符一起输出
+使用方法：一个萝卜一个坑
+注意：你挖了几个，就填几个，如果你多填了，没效果；如果你少填了，报异常。
+输出顺序：按照挖坑的顺序输出。
+代码示例：
+```cs showLineNumbers
+string str1 = "Hello";
+string str2 = "World";
+string str3 = "!";
+Console.WriteLine("{0} {1} {2}", str1, str2, str3);
+Console.ReadKey();
+```
+
+```shell
+$ dotnet run
+Hello World !
 ```
 
 ### 字符串成员
